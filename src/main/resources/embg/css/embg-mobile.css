@@ -1,0 +1,125 @@
+/* embg-mobile.css */
+
+.root {
+    -fx-background-color: #f2f2f7; 
+    -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
+}
+
+/* Typography */
+.header-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #071e49;
+}
+
+.section-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6c6c70;
+}
+
+.text-primary {
+    -fx-font-size: 17px;
+    -fx-text-fill: #000000;
+}
+
+.text-secondary {
+    -fx-font-size: 15px;
+    -fx-text-fill: #8a8a8e;
+}
+
+/* Override default TextField & Button */
+.text-input {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.text-input:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+
+/* Layout: Grouped Inset List */
+.list-group {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 1);
+}
+
+.list-item {
+    -fx-padding: 14px 16px;
+    -fx-border-color: #e5e5ea;
+    -fx-border-width: 0 0 1px 0;
+    -fx-background-color: #ffffff;
+}
+
+.list-item:last-child {
+    -fx-border-width: 0;
+}
+
+.list-item:first-child {
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.list-item:last-child {
+    -fx-background-radius: 0 0 10px 10px;
+}
+
+/* Controls */
+.text-field-custom {
+    -fx-font-size: 17px;
+    -fx-text-fill: #000000;
+    -fx-prompt-text-fill: #c7c7cc;
+}
+
+.btn-primary {
+    -fx-background-color: #071e49;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-padding: 14px;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #0a2a66;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #051533;
+}
+
+/* Segmented Control (Apple style tab) */
+.segmented-control {
+    -fx-background-color: #e3e3e8;
+    -fx-background-radius: 8px;
+    -fx-padding: 2px;
+}
+
+.segmented-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 0;
+    -fx-cursor: hand;
+}
+
+.segmented-button:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #071e49;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 4, 0, 0, 1);
+}
