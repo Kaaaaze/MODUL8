@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package embg.service;
+
+import embg.model.SiswaAlergi;
+import embg.repository.SiswaAlergiRepository;
+import java.util.List;
+/**
+ *
+ * @author lenovo
+ */
+public class SiswaAlergiService {
+    private final SiswaAlergiRepository repository;
+
+    public SiswaAlergiService() {
+        this.repository = new SiswaAlergiRepository();
+    }
+
+    public void tambahDataAlergi(int sekolahId, String nama, String jenisAlergi) {
+        if (nama == null || nama.trim().isEmpty() || jenisAlergi == null || jenisAlergi.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nama dan jenis alergi tidak boleh kosong");
+        }
+        
+        SiswaAlergi siswaBaru = new SiswaAlergi(0, sekolahId, nama, jenisAlergi);
+        repository.tambahSiswa(siswaBaru);
+    }
+
+    public List<SiswaAlergi> daftarAlergiSekolah(int sekolahId) {
+        return repository.ambilBySekolah(sekolahId);
+    }
+}
