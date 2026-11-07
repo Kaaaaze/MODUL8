@@ -6,6 +6,7 @@ package embg.repository;
 
 import embg.model.SiswaAlergi;
 import embg.util.Koneksi;
+import embg.interfaces.SiswaAlergiRepositoryInterface;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,11 +15,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  *
  * @author lenovo
  */
-public class SiswaAlergiRepository {
+public class SiswaAlergiRepository implements SiswaAlergiRepositoryInterface {
 
     public void tambahSiswa(SiswaAlergi siswa) {
         String sql = "INSERT INTO siswa_alergi (sekolah_id, nama_siswa, jenis_alergi) VALUES (?, ?, ?)";

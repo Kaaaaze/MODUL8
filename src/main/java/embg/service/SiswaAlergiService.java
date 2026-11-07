@@ -5,6 +5,7 @@
 package embg.service;
 
 import embg.model.SiswaAlergi;
+import embg.interfaces.SiswaAlergiRepositoryInterface;
 import embg.repository.SiswaAlergiRepository;
 import java.util.List;
 /**
@@ -12,10 +13,10 @@ import java.util.List;
  * @author lenovo
  */
 public class SiswaAlergiService {
-    private final SiswaAlergiRepository repository;
+    private final SiswaAlergiRepositoryInterface repository;
  
-    public SiswaAlergiService() {
-        this.repository = new SiswaAlergiRepository();
+    public SiswaAlergiService(SiswaAlergiRepositoryInterface repository) {
+        this.repository = repository;
     }
  
     public void tambahDataAlergi(int sekolahId, String nama, String jenisAlergi) {

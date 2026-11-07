@@ -19,15 +19,20 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import embg.repository.SiswaAlergiRepository;
 
 /**
  *
  * @author lenovo
  */
 public class SiswaAlergiController {
-    private final SiswaAlergiService service = new SiswaAlergiService();
+    private final SiswaAlergiService service;
  
     private static final int SEKOLAH_ID = 1;
+    
+    public SiswaAlergiController(){
+        this.service = new SiswaAlergiService(new  SiswaAlergiRepository());
+    }
  
     @FXML private TextField inputNama;
     @FXML private TextField inputAlergi;
