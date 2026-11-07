@@ -60,4 +60,17 @@ public class SiswaAlergiRepository {
         
         return list;
     }
+    public void hapusSiswa(int id) {
+        String sql = "DELETE FROM siswa_alergi WHERE id = ?";
+        
+        try (Connection conn = Koneksi.getConnection();
+                PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        
+        } catch (SQLException e) {
+            throw new RuntimeException("Gagal menghapus data siswa alergi", e);
+        }
+    }
 }

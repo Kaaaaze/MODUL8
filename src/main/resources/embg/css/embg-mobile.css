@@ -1,11 +1,8 @@
-/* embg-mobile.css */
-
 .root {
-    -fx-background-color: #f2f2f7; 
+    -fx-background-color: #f2f2f7;
     -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
 }
 
-/* Typography */
 .header-title {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
@@ -25,10 +22,9 @@
 
 .text-secondary {
     -fx-font-size: 15px;
-    -fx-text-fill: #8a8a8e;
+    -fx-text-fill: #5f5f64;
 }
 
-/* Override default TextField & Button */
 .text-input {
     -fx-background-color: transparent;
     -fx-background-insets: 0;
@@ -40,6 +36,8 @@
     -fx-background-color: transparent;
     -fx-background-insets: 0;
     -fx-background-radius: 0;
+    -fx-border-color: transparent transparent #071e49 transparent;
+    -fx-border-width: 0 0 2px 0;
 }
 
 .button {
@@ -49,7 +47,6 @@
     -fx-border-width: 0;
 }
 
-/* Layout: Grouped Inset List */
 .list-group {
     -fx-background-color: #ffffff;
     -fx-background-radius: 10px;
@@ -61,26 +58,17 @@
     -fx-padding: 14px 16px;
     -fx-border-color: #e5e5ea;
     -fx-border-width: 0 0 1px 0;
-    -fx-background-color: #ffffff;
+    -fx-background-color: transparent;
 }
 
 .list-item:last-child {
     -fx-border-width: 0;
 }
 
-.list-item:first-child {
-    -fx-background-radius: 10px 10px 0 0;
-}
-
-.list-item:last-child {
-    -fx-background-radius: 0 0 10px 10px;
-}
-
-/* Controls */
 .text-field-custom {
     -fx-font-size: 17px;
     -fx-text-fill: #000000;
-    -fx-prompt-text-fill: #c7c7cc;
+    -fx-prompt-text-fill: #6b6b70;
 }
 
 .btn-primary {
@@ -101,25 +89,40 @@
     -fx-background-color: #051533;
 }
 
-/* Segmented Control (Apple style tab) */
-.segmented-control {
-    -fx-background-color: #e3e3e8;
-    -fx-background-radius: 8px;
-    -fx-padding: 2px;
+.btn-primary:focused {
+    -fx-border-color: #b5e0ea;
+    -fx-border-width: 3px;
+    -fx-border-radius: 10px;
 }
 
-.segmented-button {
+.btn-hapus {
     -fx-background-color: transparent;
-    -fx-text-fill: #000000;
-    -fx-font-size: 13px;
+    -fx-text-fill: #071e49;
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-background-radius: 6px;
-    -fx-padding: 6px 0;
+    -fx-min-height: 44px;
+    -fx-min-width: 64px;
+    -fx-background-radius: 8px;
     -fx-cursor: hand;
 }
 
-.segmented-button:selected {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #071e49;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 4, 0, 0, 1);
+.btn-hapus:hover {
+    -fx-background-color: #b5e0ea;
+}
+
+.btn-hapus:pressed {
+    -fx-background-color: #071e49;
+    -fx-text-fill: #ffffff;
+}
+
+.btn-hapus:focused {
+    -fx-border-color: #071e49;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+}
+
+.empty-state {
+    -fx-font-size: 15px;
+    -fx-text-fill: #5f5f64;
+    -fx-padding: 8px 16px;
 }

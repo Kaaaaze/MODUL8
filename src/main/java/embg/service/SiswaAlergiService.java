@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class SiswaAlergiService {
     private final SiswaAlergiRepository repository;
-
+ 
     public SiswaAlergiService() {
         this.repository = new SiswaAlergiRepository();
     }
-
+ 
     public void tambahDataAlergi(int sekolahId, String nama, String jenisAlergi) {
         if (nama == null || nama.trim().isEmpty() || jenisAlergi == null || jenisAlergi.trim().isEmpty()) {
             throw new IllegalArgumentException("Nama dan jenis alergi tidak boleh kosong");
@@ -26,8 +26,15 @@ public class SiswaAlergiService {
         SiswaAlergi siswaBaru = new SiswaAlergi(0, sekolahId, nama, jenisAlergi);
         repository.tambahSiswa(siswaBaru);
     }
-
+ 
     public List<SiswaAlergi> daftarAlergiSekolah(int sekolahId) {
         return repository.ambilBySekolah(sekolahId);
+    }
+ 
+    public void hapusDataAlergi(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Data yang mau dihapus tidak valid");
+        }
+        repository.hapusSiswa(id);
     }
 }

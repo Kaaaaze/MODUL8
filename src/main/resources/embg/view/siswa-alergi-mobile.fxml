@@ -4,25 +4,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
-<VBox stylesheets="@../css/embg-mobile.css" 
-      prefWidth="390" prefHeight="844" 
+<VBox stylesheets="@../css/embg-mobile.css"
+      prefWidth="390" prefHeight="844"
       spacing="0" styleClass="root"
-      xmlns="http://javafx.com/javafx/21" 
+      xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="embg.controller.SiswaAlergiController">
-    
+
     <!-- Header -->
     <VBox spacing="16" style="-fx-background-color: #f2f2f7;">
         <padding>
             <Insets top="16" right="16" bottom="16" left="16"/>
         </padding>
         <Label text="Data Siswa" styleClass="header-title" />
-        
-        <!-- Segmented Control -->
-        <HBox styleClass="segmented-control" alignment="CENTER" maxWidth="Infinity">
-            <ToggleButton text="Semua Siswa" styleClass="segmented-button" style="-fx-background-insets: 0; -fx-background-radius: 6; -fx-border-width: 0;" maxWidth="Infinity" HBox.hgrow="ALWAYS" />
-            <ToggleButton text="Siswa Alergi" styleClass="segmented-button" style="-fx-background-insets: 0; -fx-background-radius: 6; -fx-border-width: 0;" selected="true" maxWidth="Infinity" HBox.hgrow="ALWAYS" />
-        </HBox>
     </VBox>
 
     <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0; -fx-border-width: 0;" VBox.vgrow="ALWAYS" vbarPolicy="NEVER" hbarPolicy="NEVER">
@@ -30,7 +24,7 @@
             <padding>
                 <Insets top="8" right="16" bottom="32" left="16"/>
             </padding>
-            
+
             <!-- Form Input -->
             <VBox spacing="8">
                 <HBox>
@@ -47,7 +41,7 @@
                         <TextField fx:id="inputAlergi" promptText="Misal: Seafood, Kacang" styleClass="text-field-custom" HBox.hgrow="ALWAYS" />
                     </HBox>
                 </VBox>
-                
+
                 <VBox>
                     <padding>
                         <Insets top="16" right="0" bottom="0" left="0"/>
@@ -56,25 +50,17 @@
                 </VBox>
             </VBox>
 
-            <!-- Daftar Siswa -->
             <VBox spacing="8">
                 <HBox>
                      <padding><Insets left="16"/></padding>
                      <Label text="DAFTAR SISWA ALERGI" styleClass="section-title" />
                 </HBox>
-                
-                <VBox fx:id="listSiswaContainer" styleClass="list-group">
-                    <HBox styleClass="list-item" alignment="CENTER_LEFT">
-                        <VBox HBox.hgrow="ALWAYS" spacing="2">
-                            <Label text="Budi Santoso" styleClass="text-primary" />
-                            <Label text="Alergi: Kacang Tanah" styleClass="text-secondary" />
-                        </VBox>
-                    </HBox>
-                </VBox>
-                
-                <Label fx:id="emptyStateLabel" text="Belum ada data siswa alergi." styleClass="empty-state" managed="false" visible="false" />
+
+                <VBox fx:id="listSiswaContainer" styleClass="list-group" />
+
+                <Label fx:id="emptyStateLabel" text="Belum ada data siswa alergi. Isi nama dan alergi di atas, lalu tekan Simpan Data." styleClass="empty-state" wrapText="true" managed="false" visible="false" />
             </VBox>
-            
+
         </VBox>
     </ScrollPane>
 </VBox>
